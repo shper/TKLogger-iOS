@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TKLogger-iOS_Example' do
+  pod 'TKLogger-iOS', :path => '../'
+
+  target 'TKLogger-iOS_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+  end
+end
