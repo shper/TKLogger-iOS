@@ -1,5 +1,5 @@
 import XCTest
-import TKLogger-iOS
+//import TKLogger-iOS
 
 class Tests: XCTestCase {
     

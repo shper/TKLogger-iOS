@@ -1,0 +1,6 @@
+framework module Pods_TKLogger_iOS_Example {
+  umbrella header "Pods-TKLogger-iOS_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

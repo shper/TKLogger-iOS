@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'TKLogger-iOS'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of TKLogger-iOS.'
+  s.name             = 'TKLogger'
+  s.version          = '1.0.0'
+  s.summary          = 'A short description of TKLogger.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -24,13 +24,13 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/me@shper.cn/TKLogger-iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'me@shper.cn' => 'me@shper.cn' }
+  s.author           = { 'Shper' => 'me@shper.cn' }
   s.source           = { :git => 'https://github.com/me@shper.cn/TKLogger-iOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
-  s.source_files = 'TKLogger-iOS/Classes/**/*'
+  s.source_files = 'TKLogger/Classes/**/*'
   
   # s.resource_bundles = {
   #   'TKLogger-iOS' => ['TKLogger-iOS/Assets/*.png']

@@ -1,7 +1,10 @@
 use_frameworks!
 
 target 'TKLogger-iOS_Example' do
-  pod 'TKLogger-iOS', :path => '../'
+  
+  pod 'SnapKit',        :git => 'http://gitee.com/shper/SnapKit.git',     :branch => 'release_5.0.1.x'
+  
+  pod 'TKLogger', :path => '../'
 
   target 'TKLogger-iOS_Tests' do
     inherit! :search_paths
