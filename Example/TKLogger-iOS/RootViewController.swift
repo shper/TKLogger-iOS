@@ -23,7 +23,11 @@ class RootViewController: UIViewController {
             make.height.equalTo(300)
         }
         
-        TKLogger.debug("AAA")
+        TKLogger.verbose("This is the verbose level log.")
+        TKLogger.info("This is the info level log.")
+        TKLogger.debug("This is the debug level log.")
+        TKLogger.warning("This is the warning level log.")
+        TKLogger.error("This is the error level log.")
     }
     
     // MARK: UI

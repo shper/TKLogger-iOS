@@ -6,19 +6,17 @@
 //
 import Foundation
 
-public class TKLoggerConsoleHandler: TKLoggerBaseHandler {
+public class TKLoggerConsoleDestination: TKLoggerBaseDestination {
     
     public var useNSLog = false
     
-    override public var defaultHashValue: Int { return 1 }
-    
-    public override init() {
+    override public init() {
         super.init()
         levelColor.verbose = "💜"     // silver
         levelColor.info = "💙"         // blue
         levelColor.debug = "💚"        // green
         levelColor.warning = "💛"     // yellow
-        levelColor.error = "❤️"       // red
+        levelColor.error = "💔"       // red
     }
     
     override public func handlerLog(_ level: TKLogger.Level,
@@ -44,7 +42,12 @@ public class TKLoggerConsoleHandler: TKLoggerBaseHandler {
                 print(str)
             }
         }
-        return logString
+        
+        return nil
+    }
+    
+    override public var defaultHashValue: Int {
+        return 1
     }
     
 }

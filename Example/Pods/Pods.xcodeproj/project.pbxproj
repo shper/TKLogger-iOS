@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		00224C929D57F45B70E87359E719948D /* FBSnapshotTestCase.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B089590F4D105863658870EF7C0923A /* FBSnapshotTestCase.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		017AD3CE1EF0744012939DEE4361DD8B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		01C550A53C9E2047C83F8E85BBB558E6 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21214E4A449109C19A88CBE70E1CD7AF /* ConstraintLayoutSupportDSL.swift */; };
 		039EAFE7935113805F3FC21BF1B7C9D5 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102283BD1D1F7C50E05C589FC70F2C82 /* LayoutConstraint.swift */; };
 		04543980C4A7CE442330B0F1BC4A9A54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		11C410135C7E89353B480AC8DE0BFB77 /* UIApplication+StrictKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F21542A6F2768B9B0233BB488C07678 /* UIApplication+StrictKeyWindow.m */; };
-		138817E86027A7B94FD4DA3518F14CCB /* TKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A86DC234A236BFB133E37B63DBC7AB7D /* TKLogger.swift */; };
 		14AD81D52FAD9CF2C065C61FB00C3B4F /* UIImage+Diff.m in Sources */ = {isa = PBXBuildFile; fileRef = 944983B2937872376A4F1AA9FFB89C25 /* UIImage+Diff.m */; };
 		14C511527597E5846AB2627F791C7D8E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 716A9972B9D9103B54DB950893FAF104 /* QuartzCore.framework */; };
 		1956E392D500F3CD899D39A5F805736D /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1FCD73CFA7D77CBEFBB03252142B53 /* Typealiases.swift */; };
 		1AFB1E9136716C0B61D6C700FF1E60FD /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F019BEA17DAF1519976CF3507F8C56 /* ConstraintLayoutGuide+Extensions.swift */; };
+		1EEF544A66E735C4774A85AD9EE6F43D /* TKLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F221ABAFDBA3D6D8DFB835C193549D5 /* TKLogger-dummy.m */; };
+		20856180CF25150A0C27C0A629C99BA7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		21AB1101BBE4D28D74ED4EDF0D59025A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2432BEA89B4175D46498BF19DF823FA5 /* ConstraintInsets.swift */; };
 		232B2F922E972D9F43D2EE15ACECE734 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C8AAEC7C779463138F5962B583E774 /* ConstraintPriority.swift */; };
 		2A1BBBC87AC2367BD14610A9D10D285E /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D58FB99DCFB4D9C46326ACD1991F6F3 /* ConstraintAttributes.swift */; };
@@ -29,7 +29,6 @@
 		40039E0AF0D764360B1D4FC4F7950D2E /* UIApplication+StrictKeyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 89CBA9D6B4ADC4E86C7F3582BCF05A51 /* UIApplication+StrictKeyWindow.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		428A6E27F346DF7CD9D7CD116E131D19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */; };
 		4C7A676DAE95EEAC3787A75349F0862D /* SnapKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A15111DBE3FF5BB06022F92763BEB2E /* SnapKit-dummy.m */; };
-		4D55661D8BF53819E79448C7419AAE50 /* TKLoggerConsoleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD1471D33F382A6088C195FD704A6CF /* TKLoggerConsoleHandler.swift */; };
 		51CD5887014967E77E58F5A163996454 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21842211D951E6EC0201FD139E0790FF /* ConstraintMaker.swift */; };
 		534881517DCCB09EEE28596B009E229D /* Pods-TKLogger-iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D21AE531786490912A7107FD43404EF /* Pods-TKLogger-iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		57B1876F2BE4168E5BFDB63D8CC849A0 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D767BB24EECBF3CF2E954D1DDBA87A /* ConstraintLayoutSupport.swift */; };
@@ -48,9 +47,11 @@
 		8277256ADEC3C4DCF79957D1CA681A9A /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9B5ABC744057C173E00A158C7B8BE0 /* ConstraintDSL.swift */; };
 		8705BBF0D428BF0AE1B554A377ECC540 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5342EFD92EE77D664D900843E89ACC /* ConstraintOffsetTarget.swift */; };
 		88396E68DC05A379282F3B374F75F43C /* FBSnapshotTestController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91992AC7ACB8B950DB27A2F2B2A2EBE /* FBSnapshotTestController.m */; };
+		89521F6581EADDC55F028FB1089697C5 /* TKLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7769F997D3EDCF0D31721FEF73E93750 /* TKLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CE3BF0ACE07EA42DD5DAC871BF4B767 /* FBSnapshotTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 62139C08F714CD0A7001FA0DE216333F /* FBSnapshotTestCase.m */; };
+		8EC1F47C4CC918FFB1A05730F34E0087 /* TKLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C7A18FEA06F44CBF043DD165FA0984 /* TKLogger.swift */; };
+		8F509F1B575C7097F422077526F131B8 /* TKLoggerConsoleDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54AF4F64E2035BD052FB4476174F751C /* TKLoggerConsoleDestination.swift */; };
 		90142C6259374E18E640396A59AD379A /* FBSnapshotTestController.h in Headers */ = {isa = PBXBuildFile; fileRef = 93CDA9D4FF0D9BBFBD9E323A88F3F5E2 /* FBSnapshotTestController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		90D3D2290D3E8075D26788A0357D2A92 /* TKLoggerBaseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C47F19B61AC395E63C37C54BC620E9 /* TKLoggerBaseHandler.swift */; };
 		98E4B24AA0E46CE0DCA1C6445318E556 /* Pods-TKLogger-iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4790FBD4EB632FAB0F76DC7FD582DBD5 /* Pods-TKLogger-iOS_Example-dummy.m */; };
 		99B5296A5EDECE0557B9DA53D9E19CA1 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36D60C3874362A7959E300E05B8046 /* ConstraintItem.swift */; };
 		9B09968922C73D50040C6EEF57890D6E /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58294F97409EA83594FCA42186AF2AF /* ConstraintConfig.swift */; };
@@ -64,20 +65,20 @@
 		B74CD6E6EBEA0B642776BCB37850415D /* UIImage+Snapshot.h in Headers */ = {isa = PBXBuildFile; fileRef = DADC3438999B3B013139E230AF6FDD6E /* UIImage+Snapshot.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B780B272106411CBE258BB60FFC45410 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DADAA91A479CE30DFD892D30DB5018 /* Debugging.swift */; };
 		BECA67DFB5E0984DFAEFCB775C31972E /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 293AD1AAFC0D4F1D4155B71D134266B7 /* ConstraintView.swift */; };
+		C0665BEC267C82E10F9FE8B2521BAD9D /* TKLoggerFileDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB0A3B2C106E14EE3763F4BF6EC787E /* TKLoggerFileDestination.swift */; };
 		C412F27D75AFC0DF0F0289DBB270931C /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594EC1E7A411E5C7151C6CC278D2E632 /* ConstraintMakerFinalizable.swift */; };
 		C49D52712466511E332C952834C81FE1 /* FBSnapshotTestCasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = 41BCA10EE0C1AEAC72EE1ED20023B819 /* FBSnapshotTestCasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE62FEABA57B2B53EABF8C7DCCC6B2C4 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F92B62A14B28B323404C324B449E7F /* ConstraintRelation.swift */; };
 		D04AAC8B22E4A4DC4F39891C4E52F251 /* UIImage+Diff.h in Headers */ = {isa = PBXBuildFile; fileRef = 7EF69DF27CBEF96A8AC91CBED20813E1 /* UIImage+Diff.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		D42DD711CAED9E682B107D58C5203B8B /* TKLogger-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A76746EB7099F9BAF1780E21D5C5468B /* TKLogger-dummy.m */; };
 		D4697DC40F3B059E4A0867838CA1814E /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542F1ECA570ECEAFF0122E8DB97B38EC /* ConstraintMultiplierTarget.swift */; };
 		E0B8D095C732352C854D365B9E5B993D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */; };
+		E29386B940D037ADA3570E1D94487797 /* TKLoggerBaseDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD3635E85C8A803748568992882E078E /* TKLoggerBaseDestination.swift */; };
 		E8AC509D18EBF21B1FEA909652A01108 /* FBSnapshotTestCasePlatform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4674477C145D23117042F5DF1F9B3FB7 /* FBSnapshotTestCasePlatform.m */; };
 		E8F2429683B3015CBD39CE883770BCA7 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE700936B5976B7DA41AB377EDC8F33D /* ConstraintPriorityTarget.swift */; };
 		E9A970BC24EA15832F248EA020072746 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03771ACFD02F4B138FAF23D49A60B8EE /* LayoutConstraintItem.swift */; };
 		EB1726F5E0D0EEBA20E4528B1E37A8FA /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF982B0AB8775FBDCD55E52E1FA5CCD /* ConstraintViewDSL.swift */; };
 		EE909C7C786140109051BC9562EEC7C8 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F3F4D2879CB30727827DAAA1D536B5 /* ConstraintMakerPriortizable.swift */; };
 		F1AAAE00BB32B733B238E2B4E8424506 /* UIImage+Compare.h in Headers */ = {isa = PBXBuildFile; fileRef = 32059EA2B1485BAE02163AE7F4D7001C /* UIImage+Compare.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		F1FFA2761F98EB722572E8E63FEE4EF2 /* TKLogger-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6D6EB71B5DC288DF92D2DACE269E12DA /* TKLogger-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F720FAF13A108CE6901E0A8B0580E1E8 /* FBSnapshotTestCase-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FD09B2A3B86115ED739989E6CB14E1 /* FBSnapshotTestCase-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -113,26 +114,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0134DDF3E1339F8448D493956BF99035 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		03771ACFD02F4B138FAF23D49A60B8EE /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		0966822237F2CBD7C4B96B105F25905B /* TKLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKLogger-prefix.pch"; sourceTree = "<group>"; };
 		0A15111DBE3FF5BB06022F92763BEB2E /* SnapKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SnapKit-dummy.m"; sourceTree = "<group>"; };
-		0E000BF8E70B5488F9890EBFE2CA61D9 /* TKLogger-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TKLogger-Info.plist"; sourceTree = "<group>"; };
+		0EFB8E57E2EF8466E7FE4177A4CC6B1E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		102283BD1D1F7C50E05C589FC70F2C82 /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		11004786A90A9DEA02C267D77E0DBE35 /* Pods-TKLogger-iOS_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKLogger-iOS_Example-Info.plist"; sourceTree = "<group>"; };
 		1120642163CB7AD869BFBE3D6CCFE61B /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsetTarget.swift; path = Source/ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
 		12C8AAEC7C779463138F5962B583E774 /* ConstraintPriority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriority.swift; path = Source/ConstraintPriority.swift; sourceTree = "<group>"; };
 		1330CC08459697A7DCD8444807965C85 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuide.swift; path = Source/ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
+		13ADF5F49DAC9D254633F4AFD4B7CE89 /* TKLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKLogger.release.xcconfig; sourceTree = "<group>"; };
 		14D18CB3407C66E7EB0D9C8D2AC36AEF /* SwiftSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftSupport.swift; path = FBSnapshotTestCase/SwiftSupport.swift; sourceTree = "<group>"; };
 		14F92B62A14B28B323404C324B449E7F /* ConstraintRelation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelation.swift; path = Source/ConstraintRelation.swift; sourceTree = "<group>"; };
 		15EDDA8249E9875CB98BA6BEBB97F7F1 /* Pods-TKLogger-iOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TKLogger-iOS_Example-umbrella.h"; sourceTree = "<group>"; };
 		19946F1595F2D7AEB2C518E751164FCD /* SnapKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SnapKit-Info.plist"; sourceTree = "<group>"; };
+		1DB0A3B2C106E14EE3763F4BF6EC787E /* TKLoggerFileDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TKLoggerFileDestination.swift; sourceTree = "<group>"; };
 		21214E4A449109C19A88CBE70E1CD7AF /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupportDSL.swift; path = Source/ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		215A29F4360C5FB80A197AEBF24242B0 /* FBSnapshotTestCase-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-prefix.pch"; sourceTree = "<group>"; };
 		21842211D951E6EC0201FD139E0790FF /* ConstraintMaker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMaker.swift; path = Source/ConstraintMaker.swift; sourceTree = "<group>"; };
 		2432BEA89B4175D46498BF19DF823FA5 /* ConstraintInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsets.swift; path = Source/ConstraintInsets.swift; sourceTree = "<group>"; };
 		28D4CD794A4FDC9C47F4B8504528663F /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutGuideDSL.swift; path = Source/ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
 		293AD1AAFC0D4F1D4155B71D134266B7 /* ConstraintView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintView.swift; path = Source/ConstraintView.swift; sourceTree = "<group>"; };
-		2988CA670FACFBAD1BCEEB606A01C469 /* TKLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TKLogger.modulemap; sourceTree = "<group>"; };
+		2A4162470649D29B47ECB58A8629CD22 /* TKLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKLogger.debug.xcconfig; sourceTree = "<group>"; };
 		2AC506AE5E0EEF9E9FA02165494C7F3F /* Pods-TKLogger-iOS_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TKLogger-iOS_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		2D21AE531786490912A7107FD43404EF /* Pods-TKLogger-iOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TKLogger-iOS_Tests-umbrella.h"; sourceTree = "<group>"; };
 		2F876EE5F0A073A687225BBB3ADA47FE /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintInsetTarget.swift; path = Source/ConstraintInsetTarget.swift; sourceTree = "<group>"; };
@@ -146,25 +149,26 @@
 		4790FBD4EB632FAB0F76DC7FD582DBD5 /* Pods-TKLogger-iOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TKLogger-iOS_Example-dummy.m"; sourceTree = "<group>"; };
 		4FF982B0AB8775FBDCD55E52E1FA5CCD /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintViewDSL.swift; path = Source/ConstraintViewDSL.swift; sourceTree = "<group>"; };
 		542F1ECA570ECEAFF0122E8DB97B38EC /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMultiplierTarget.swift; path = Source/ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
+		54AF4F64E2035BD052FB4476174F751C /* TKLoggerConsoleDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TKLoggerConsoleDestination.swift; sourceTree = "<group>"; };
 		594EC1E7A411E5C7151C6CC278D2E632 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerFinalizable.swift; path = Source/ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
 		5B1FCD73CFA7D77CBEFBB03252142B53 /* Typealiases.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Typealiases.swift; path = Source/Typealiases.swift; sourceTree = "<group>"; };
 		5C4F31330DFA99D699E4BDC8C3573D73 /* FBSnapshotTestCase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FBSnapshotTestCase.framework; path = FBSnapshotTestCase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CEBC6C2CCDFED523F0A348DEAE4C0C9 /* TKLogger-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TKLogger-Info.plist"; sourceTree = "<group>"; };
 		5E601BD54DA9BF4071437E60125281FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		5F221ABAFDBA3D6D8DFB835C193549D5 /* TKLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKLogger-dummy.m"; sourceTree = "<group>"; };
 		604FCE2D458CD00CF9C264558822EEB1 /* Pods-TKLogger-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKLogger-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		61FA09BDA047BB90052AF68DDA5CAFDD /* SnapKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SnapKit.debug.xcconfig; sourceTree = "<group>"; };
 		62139C08F714CD0A7001FA0DE216333F /* FBSnapshotTestCase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FBSnapshotTestCase.m; path = FBSnapshotTestCase/FBSnapshotTestCase.m; sourceTree = "<group>"; };
 		62647E7A55022CA27E339011E2D13567 /* Pods-TKLogger-iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TKLogger-iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6540B55FC17351BBD89629113D606825 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		656B0279F576D42FC28B88623878C4BA /* Pods_TKLogger_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKLogger_iOS_Example.framework; path = "Pods-TKLogger-iOS_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6DD53AC63D90AC3512C9E662DFC1A8 /* Pods-TKLogger-iOS_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKLogger-iOS_Tests-Info.plist"; sourceTree = "<group>"; };
-		6D6EB71B5DC288DF92D2DACE269E12DA /* TKLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKLogger-umbrella.h"; sourceTree = "<group>"; };
 		6F6509809195041E58D2D7A984E78AF4 /* SnapKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SnapKit-umbrella.h"; sourceTree = "<group>"; };
 		716A9972B9D9103B54DB950893FAF104 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		73907E4D7E279864A19F8EF256926572 /* Constraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constraint.swift; path = Source/Constraint.swift; sourceTree = "<group>"; };
-		75DAD15492464EE3C2DC4E69A61377EF /* TKLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKLogger.release.xcconfig; sourceTree = "<group>"; };
+		76C7A18FEA06F44CBF043DD165FA0984 /* TKLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKLogger.swift; path = TKLogger/Classes/TKLogger.swift; sourceTree = "<group>"; };
+		7769F997D3EDCF0D31721FEF73E93750 /* TKLogger-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKLogger-umbrella.h"; sourceTree = "<group>"; };
 		7BD4ED544B638D07C7D755AF1C27116A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7C0BFB04CDF33F53999BF69C233F6D4D /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintView+Extensions.swift"; path = "Source/ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		7CD1471D33F382A6088C195FD704A6CF /* TKLoggerConsoleHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKLoggerConsoleHandler.swift; path = TKLogger/Classes/TKLoggerConsoleHandler.swift; sourceTree = "<group>"; };
 		7D58FB99DCFB4D9C46326ACD1991F6F3 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintAttributes.swift; path = Source/ConstraintAttributes.swift; sourceTree = "<group>"; };
 		7EF69DF27CBEF96A8AC91CBED20813E1 /* UIImage+Diff.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Diff.h"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.h"; sourceTree = "<group>"; };
 		81D767BB24EECBF3CF2E954D1DDBA87A /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintLayoutSupport.swift; path = Source/ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
@@ -174,28 +178,26 @@
 		8CAA89EEF1039078430D7A886477E365 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		8DD361EBE4DD87D5DD340ADAE864959E /* TKLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TKLogger.framework; path = TKLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F1819503C4D678E040BA108E3CC32FD /* FBSnapshotTestCase.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FBSnapshotTestCase.modulemap; sourceTree = "<group>"; };
+		8F366E37CEE0AC7E0FA45A40FF8AFFF8 /* TKLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TKLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		91AD59244F1DFD57C8110C151EEEDEF3 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConstantTarget.swift; path = Source/ConstraintConstantTarget.swift; sourceTree = "<group>"; };
 		93CDA9D4FF0D9BBFBD9E323A88F3F5E2 /* FBSnapshotTestController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestController.h; path = FBSnapshotTestCase/FBSnapshotTestController.h; sourceTree = "<group>"; };
 		944983B2937872376A4F1AA9FFB89C25 /* UIImage+Diff.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Diff.m"; path = "FBSnapshotTestCase/Categories/UIImage+Diff.m"; sourceTree = "<group>"; };
 		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C89972A282BE61BFBAE7E20C9F9E33 /* TKLogger-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TKLogger-prefix.pch"; sourceTree = "<group>"; };
 		99FD09B2A3B86115ED739989E6CB14E1 /* FBSnapshotTestCase-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FBSnapshotTestCase-umbrella.h"; sourceTree = "<group>"; };
 		9AB7638BD77F96DCE338494F29C00763 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		9B089590F4D105863658870EF7C0923A /* FBSnapshotTestCase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FBSnapshotTestCase.h; path = FBSnapshotTestCase/FBSnapshotTestCase.h; sourceTree = "<group>"; };
 		9B5D66012D2C62FDF0A0C8DDF659DD36 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDirectionalInsets.swift; path = Source/ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A118DEE1BAFB8AF2F40B80A87B5C5CD4 /* ConstraintDescription.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDescription.swift; path = Source/ConstraintDescription.swift; sourceTree = "<group>"; };
-		A1C8BDD09F4142E96D03E96341682F33 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		A22F34303F4F824AFEB34F5EA467F24C /* TKLogger.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TKLogger.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A2A51426B8B016C698ABCA2606E6C0E3 /* TKLogger.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TKLogger.modulemap; sourceTree = "<group>"; };
 		A38331331EDA1537B8644B0E9B773C34 /* UIImage+Compare.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Compare.m"; path = "FBSnapshotTestCase/Categories/UIImage+Compare.m"; sourceTree = "<group>"; };
 		A3ED6F9C6860C745E84CCFDBFFA9DEDD /* FBSnapshotTestCase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.debug.xcconfig; sourceTree = "<group>"; };
 		A65DF761DCFBF0506373B6736001C5E1 /* Pods-TKLogger-iOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TKLogger-iOS_Example.modulemap"; sourceTree = "<group>"; };
 		A6B591AFC5C994E896BA986841D9ADDF /* Pods-TKLogger-iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TKLogger-iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A6BD6B017BF0B003582F39B54EE71307 /* Pods-TKLogger-iOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TKLogger-iOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A76746EB7099F9BAF1780E21D5C5468B /* TKLogger-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TKLogger-dummy.m"; sourceTree = "<group>"; };
-		A86DC234A236BFB133E37B63DBC7AB7D /* TKLogger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKLogger.swift; path = TKLogger/Classes/TKLogger.swift; sourceTree = "<group>"; };
 		AE700936B5976B7DA41AB377EDC8F33D /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintPriorityTarget.swift; path = Source/ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
 		B2752DC50B6F2DCE189CAAB308A2043F /* Pods-TKLogger-iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TKLogger-iOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		B87F94AC2029FC09D38E4B60059142E5 /* TKLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TKLogger.debug.xcconfig; sourceTree = "<group>"; };
 		BB92B08B85994B159825124DF35E77BA /* FBSnapshotTestCase-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FBSnapshotTestCase-Info.plist"; sourceTree = "<group>"; };
 		BE36D60C3874362A7959E300E05B8046 /* ConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintItem.swift; path = Source/ConstraintItem.swift; sourceTree = "<group>"; };
 		BE519D4EC79C79B307C012B37EA984CE /* Pods_TKLogger_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TKLogger_iOS_Tests.framework; path = "Pods-TKLogger-iOS_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,9 +209,9 @@
 		CE5342EFD92EE77D664D900843E89ACC /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintOffsetTarget.swift; path = Source/ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
 		D082296355E44615AD2B7F2238780F2D /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintRelatableTarget.swift; path = Source/ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
 		D58294F97409EA83594FCA42186AF2AF /* ConstraintConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintConfig.swift; path = Source/ConstraintConfig.swift; sourceTree = "<group>"; };
-		D7C47F19B61AC395E63C37C54BC620E9 /* TKLoggerBaseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TKLoggerBaseHandler.swift; path = TKLogger/Classes/TKLoggerBaseHandler.swift; sourceTree = "<group>"; };
 		D7F019BEA17DAF1519976CF3507F8C56 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ConstraintLayoutGuide+Extensions.swift"; path = "Source/ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
 		DADC3438999B3B013139E230AF6FDD6E /* UIImage+Snapshot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+Snapshot.h"; path = "FBSnapshotTestCase/Categories/UIImage+Snapshot.h"; sourceTree = "<group>"; };
+		DD3635E85C8A803748568992882E078E /* TKLoggerBaseDestination.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TKLoggerBaseDestination.swift; sourceTree = "<group>"; };
 		E23C760A01ECAC976DEEA0BF16A440D1 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerEditable.swift; path = Source/ConstraintMakerEditable.swift; sourceTree = "<group>"; };
 		E756784815E1B4E54EA3F9F8EDAA81D6 /* Pods-TKLogger-iOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TKLogger-iOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		E75DCAD51C9B1B43F168CF0F9D433A1C /* FBSnapshotTestCase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FBSnapshotTestCase.release.xcconfig; sourceTree = "<group>"; };
@@ -230,11 +232,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4E7EE8B7C843760F71D572B1138FF596 /* Frameworks */ = {
+		47A0B057A2624339872EBCEFAE529D50 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				017AD3CE1EF0744012939DEE4361DD8B /* Foundation.framework in Frameworks */,
+				20856180CF25150A0C27C0A629C99BA7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,34 +279,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1B26EEFBD5B4E16C9121E86E3002CE2F /* TKLogger */ = {
-			isa = PBXGroup;
-			children = (
-				A86DC234A236BFB133E37B63DBC7AB7D /* TKLogger.swift */,
-				D7C47F19B61AC395E63C37C54BC620E9 /* TKLoggerBaseHandler.swift */,
-				7CD1471D33F382A6088C195FD704A6CF /* TKLoggerConsoleHandler.swift */,
-				DDF6BFB5934153261E952D4C9FC64CD7 /* Pod */,
-				1D4E4C5C94F9EBAA9FCEF3F8007BAC1D /* Support Files */,
-			);
-			name = TKLogger;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		1D4E4C5C94F9EBAA9FCEF3F8007BAC1D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2988CA670FACFBAD1BCEEB606A01C469 /* TKLogger.modulemap */,
-				A76746EB7099F9BAF1780E21D5C5468B /* TKLogger-dummy.m */,
-				0E000BF8E70B5488F9890EBFE2CA61D9 /* TKLogger-Info.plist */,
-				0966822237F2CBD7C4B96B105F25905B /* TKLogger-prefix.pch */,
-				6D6EB71B5DC288DF92D2DACE269E12DA /* TKLogger-umbrella.h */,
-				B87F94AC2029FC09D38E4B60059142E5 /* TKLogger.debug.xcconfig */,
-				75DAD15492464EE3C2DC4E69A61377EF /* TKLogger.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TKLogger";
-			sourceTree = "<group>";
-		};
 		1DAE5A501A0E399BEAC41DC1231C2DB8 /* Pods-TKLogger-iOS_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +294,17 @@
 			);
 			name = "Pods-TKLogger-iOS_Example";
 			path = "Target Support Files/Pods-TKLogger-iOS_Example";
+			sourceTree = "<group>";
+		};
+		1DEEDA8FB744823782B3EF3D8F53F41D /* Destinations */ = {
+			isa = PBXGroup;
+			children = (
+				DD3635E85C8A803748568992882E078E /* TKLoggerBaseDestination.swift */,
+				54AF4F64E2035BD052FB4476174F751C /* TKLoggerConsoleDestination.swift */,
+				1DB0A3B2C106E14EE3763F4BF6EC787E /* TKLoggerFileDestination.swift */,
+			);
+			name = Destinations;
+			path = TKLogger/Classes/Destinations;
 			sourceTree = "<group>";
 		};
 		1FF0CAC19429770F79C1D20B5A0DFFC6 /* Products */ = {
@@ -379,10 +364,10 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		5E5F43ED7D3186E790BD6CB4C5A6B683 /* Development Pods */ = {
+		76F5147F5034ECEB2A3C801309C8C24C /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1B26EEFBD5B4E16C9121E86E3002CE2F /* TKLogger */,
+				F3886E61CAB97B3EA5C6B0FBB32C7BC6 /* TKLogger */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -438,26 +423,26 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CA7AE476ACE811FDCCC14EB43FEFF238 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				0134DDF3E1339F8448D493956BF99035 /* LICENSE */,
+				0EFB8E57E2EF8466E7FE4177A4CC6B1E /* README.md */,
+				8F366E37CEE0AC7E0FA45A40FF8AFFF8 /* TKLogger.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				5E5F43ED7D3186E790BD6CB4C5A6B683 /* Development Pods */,
+				76F5147F5034ECEB2A3C801309C8C24C /* Development Pods */,
 				BA4F31F07263C99FC76E66D632A59F09 /* Frameworks */,
 				4EBDD9241924AE39B96F35AE8F05469B /* Pods */,
 				1FF0CAC19429770F79C1D20B5A0DFFC6 /* Products */,
 				08BB0307F37CA7C33A09D6313BB00E44 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		DDF6BFB5934153261E952D4C9FC64CD7 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				6540B55FC17351BBD89629113D606825 /* LICENSE */,
-				A1C8BDD09F4142E96D03E96341682F33 /* README.md */,
-				A22F34303F4F824AFEB34F5EA467F24C /* TKLogger.podspec */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		E41DEAFB41BD0A8F1D8706922C63FC9F /* SwiftSupport */ = {
@@ -466,6 +451,33 @@
 				14D18CB3407C66E7EB0D9C8D2AC36AEF /* SwiftSupport.swift */,
 			);
 			name = SwiftSupport;
+			sourceTree = "<group>";
+		};
+		F2CD418FAC70B9AAE5B68854E8735AC0 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A2A51426B8B016C698ABCA2606E6C0E3 /* TKLogger.modulemap */,
+				5F221ABAFDBA3D6D8DFB835C193549D5 /* TKLogger-dummy.m */,
+				5CEBC6C2CCDFED523F0A348DEAE4C0C9 /* TKLogger-Info.plist */,
+				98C89972A282BE61BFBAE7E20C9F9E33 /* TKLogger-prefix.pch */,
+				7769F997D3EDCF0D31721FEF73E93750 /* TKLogger-umbrella.h */,
+				2A4162470649D29B47ECB58A8629CD22 /* TKLogger.debug.xcconfig */,
+				13ADF5F49DAC9D254633F4AFD4B7CE89 /* TKLogger.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TKLogger";
+			sourceTree = "<group>";
+		};
+		F3886E61CAB97B3EA5C6B0FBB32C7BC6 /* TKLogger */ = {
+			isa = PBXGroup;
+			children = (
+				76C7A18FEA06F44CBF043DD165FA0984 /* TKLogger.swift */,
+				1DEEDA8FB744823782B3EF3D8F53F41D /* Destinations */,
+				CA7AE476ACE811FDCCC14EB43FEFF238 /* Pod */,
+				F2CD418FAC70B9AAE5B68854E8735AC0 /* Support Files */,
+			);
+			name = TKLogger;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		FA136EAEE2F02E98BD0AE0575BE06E48 /* FBSnapshotTestCase */ = {
@@ -558,19 +570,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3A9003E1A9313D05DA597991CEA32FDC /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1FFA2761F98EB722572E8E63FEE4EF2 /* TKLogger-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7DFCF5F12AEEED0500986DBC9BF76170 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A66ED57B365A35434C5BAF4B990819B7 /* SnapKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5D3410A7243B37C338C4A5F65D3B037 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89521F6581EADDC55F028FB1089697C5 /* TKLogger-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,12 +609,12 @@
 		};
 		80447289F1BB79D98E39056972123A68 /* TKLogger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0769279D81C5382BCF44B0B0D1CDAA0F /* Build configuration list for PBXNativeTarget "TKLogger" */;
+			buildConfigurationList = BC4792C57C9C37C6506989A331188A46 /* Build configuration list for PBXNativeTarget "TKLogger" */;
 			buildPhases = (
-				3A9003E1A9313D05DA597991CEA32FDC /* Headers */,
-				8D75A904FF4CE94F3231A255B457B27D /* Sources */,
-				4E7EE8B7C843760F71D572B1138FF596 /* Frameworks */,
-				8B141BA09C24724CBBC185809959C238 /* Resources */,
+				D5D3410A7243B37C338C4A5F65D3B037 /* Headers */,
+				179110236339F6605A6B2570519FCE8E /* Sources */,
+				47A0B057A2624339872EBCEFAE529D50 /* Frameworks */,
+				D9318E796BFCF0A5CAC4BC1C32CE8CEA /* Resources */,
 			);
 			buildRules = (
 			);
@@ -717,13 +729,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8B141BA09C24724CBBC185809959C238 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		9C536B9D5FE1EC6EFF4A8C09F046857F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,9 +743,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D9318E796BFCF0A5CAC4BC1C32CE8CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		179110236339F6605A6B2570519FCE8E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EEF544A66E735C4774A85AD9EE6F43D /* TKLogger-dummy.m in Sources */,
+				8EC1F47C4CC918FFB1A05730F34E0087 /* TKLogger.swift in Sources */,
+				E29386B940D037ADA3570E1D94487797 /* TKLoggerBaseDestination.swift in Sources */,
+				8F509F1B575C7097F422077526F131B8 /* TKLoggerConsoleDestination.swift in Sources */,
+				C0665BEC267C82E10F9FE8B2521BAD9D /* TKLoggerFileDestination.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		19ED9FB21B2AE6A73B78D9972D99B082 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -790,17 +814,6 @@
 				4C7A676DAE95EEAC3787A75349F0862D /* SnapKit-dummy.m in Sources */,
 				1956E392D500F3CD899D39A5F805736D /* Typealiases.swift in Sources */,
 				6E0EB9E7FAAEDBB7A73ECF3095F69C4A /* UILayoutSupport+Extensions.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8D75A904FF4CE94F3231A255B457B27D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D42DD711CAED9E682B107D58C5203B8B /* TKLogger-dummy.m in Sources */,
-				138817E86027A7B94FD4DA3518F14CCB /* TKLogger.swift in Sources */,
-				90D3D2290D3E8075D26788A0357D2A92 /* TKLoggerBaseHandler.swift in Sources */,
-				4D55661D8BF53819E79448C7419AAE50 /* TKLoggerConsoleHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,37 +938,6 @@
 			};
 			name = Debug;
 		};
-		187E86093C751375B084C3AB31E7433F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B87F94AC2029FC09D38E4B60059142E5 /* TKLogger.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TKLogger/TKLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TKLogger/TKLogger-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TKLogger/TKLogger.modulemap";
-				PRODUCT_MODULE_NAME = TKLogger;
-				PRODUCT_NAME = TKLogger;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		441C7939108738A0C7CD37CBADE0B85E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A3ED6F9C6860C745E84CCFDBFFA9DEDD /* FBSnapshotTestCase.debug.xcconfig */;
@@ -986,6 +968,38 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		591B95035B2A9D9F7ECF847EA35D24D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13ADF5F49DAC9D254633F4AFD4B7CE89 /* TKLogger.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TKLogger/TKLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TKLogger/TKLogger-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TKLogger/TKLogger.modulemap";
+				PRODUCT_MODULE_NAME = TKLogger;
+				PRODUCT_NAME = TKLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		76897EE888AB1A9816D80B85D8C40D8E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1178,6 +1192,37 @@
 			};
 			name = Debug;
 		};
+		B8704138C7B205298456B28926D3EA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A4162470649D29B47ECB58A8629CD22 /* TKLogger.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TKLogger/TKLogger-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TKLogger/TKLogger-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/TKLogger/TKLogger.modulemap";
+				PRODUCT_MODULE_NAME = TKLogger;
+				PRODUCT_NAME = TKLogger;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		BE874B114A0991701B09229EAAA4CA84 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E75DCAD51C9B1B43F168CF0F9D433A1C /* FBSnapshotTestCase.release.xcconfig */;
@@ -1199,38 +1244,6 @@
 				MODULEMAP_FILE = "Target Support Files/FBSnapshotTestCase/FBSnapshotTestCase.modulemap";
 				PRODUCT_MODULE_NAME = FBSnapshotTestCase;
 				PRODUCT_NAME = FBSnapshotTestCase;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		C3C170C6195B611D362DE29F8467B2E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75DAD15492464EE3C2DC4E69A61377EF /* TKLogger.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/TKLogger/TKLogger-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/TKLogger/TKLogger-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/TKLogger/TKLogger.modulemap";
-				PRODUCT_MODULE_NAME = TKLogger;
-				PRODUCT_NAME = TKLogger;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1308,15 +1321,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0769279D81C5382BCF44B0B0D1CDAA0F /* Build configuration list for PBXNativeTarget "TKLogger" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				187E86093C751375B084C3AB31E7433F /* Debug */,
-				C3C170C6195B611D362DE29F8467B2E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1358,6 +1362,15 @@
 			buildConfigurations = (
 				441C7939108738A0C7CD37CBADE0B85E /* Debug */,
 				BE874B114A0991701B09229EAAA4CA84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BC4792C57C9C37C6506989A331188A46 /* Build configuration list for PBXNativeTarget "TKLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B8704138C7B205298456B28926D3EA97 /* Debug */,
+				591B95035B2A9D9F7ECF847EA35D24D2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

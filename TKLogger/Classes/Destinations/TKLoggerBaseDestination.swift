@@ -6,7 +6,7 @@
 //
 import Foundation
 
-open class TKLoggerBaseHandler: Hashable, Equatable {
+open class TKLoggerBaseDestination: Hashable, Equatable {
     
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $N.$F:$l - $M $I"
     
@@ -211,7 +211,7 @@ open class TKLoggerBaseHandler: Hashable, Equatable {
         // do noting.
     }
     
-    public static func == (lhs: TKLoggerBaseHandler, rhs: TKLoggerBaseHandler) -> Bool {
+    public static func == (lhs: TKLoggerBaseDestination, rhs: TKLoggerBaseDestination) -> Bool {
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
     

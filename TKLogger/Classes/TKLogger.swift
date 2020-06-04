@@ -17,24 +17,25 @@ public final class TKLogger {
         case error = 4
     }
     
-    public private(set) static var handlers = Set<TKLoggerBaseHandler>()
+    public private(set) static var destinations = Set<TKLoggerBaseDestination>()
     
     private(set) static var loggerTag = "TKLogger"
     
     public static func setup(tag: String = "TKLogger") {
         loggerTag = tag
         
-        addDestination(TKLoggerConsoleHandler())
+        addDestination(TKLoggerConsoleDestination())
+        addDestination(TKLoggerFileDestination())
     }
     
     // MARK: Handler
     @discardableResult
-    public class func addDestination(_ handler: TKLoggerBaseHandler) -> Bool {
-        if handlers.contains(handler) {
+    public class func addDestination(_ handler: TKLoggerBaseDestination) -> Bool {
+        if destinations.contains(handler) {
             return false
         }
         
-        handlers.insert(handler)
+        destinations.insert(handler)
         return true
     }
     
@@ -71,7 +72,7 @@ public final class TKLogger {
                              _ file: String = #file,
                              _ function: String = #function,
                              _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.warning, message, file, function, line)
+        dispatchLog(TKLogger.Level.error, message, file, function, line)
     }
     
     // MARK: Inner function
@@ -84,16 +85,16 @@ public final class TKLogger {
         
         let thread = threadName()
         
-        for handler in handlers {
+        for handler in destinations {
             guard let queue = handler.queue else { continue }
             
             if handler.asynchronously {
                 queue.async {
-                    handler.handlerLog(level, message, "", thread, file, function, line)
+                    _ = handler.handlerLog(level, message, "", thread, file, function, line)
                 }
             } else {
                 queue.sync {
-                    handler.handlerLog(level, message, "", thread, file, function, line)
+                    _ = handler.handlerLog(level, message, "", thread, file, function, line)
                 }
             }
         }
