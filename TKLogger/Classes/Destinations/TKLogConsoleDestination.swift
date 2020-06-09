@@ -46,8 +46,4 @@ public class TKLogConsoleDestination: TKLogBaseDestination {
         return nil
     }
     
-    override public var defaultHashValue: Int {
-        return 1
-    }
-    
 }

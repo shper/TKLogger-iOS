@@ -7,13 +7,7 @@
 import Foundation
 
 open class TKLogBaseDestination: Hashable, Equatable {
-    
-    lazy public var hashValue: Int = self.defaultHashValue
-    
-    open var defaultHashValue: Int {
-        return 0
-    }
-    
+
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $N.$F:$l - $M $I"
     
     /// runs in own serial background thread for better performance

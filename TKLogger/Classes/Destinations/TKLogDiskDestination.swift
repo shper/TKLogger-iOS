@@ -15,7 +15,6 @@ public class TKLogDiskDestination: TKLogBaseDestination {
     
     private var logFileURL: URL?
     
-    
     // MARK: Lifecycle
     
     override public init() {
@@ -55,10 +54,6 @@ public class TKLogDiskDestination: TKLogBaseDestination {
         
         saveToFile(logStr)
         return nil
-    }
-    
-    override public var defaultHashValue: Int {
-        return 2
     }
     
     func cerateLogDirectory() {
