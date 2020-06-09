@@ -8,6 +8,12 @@ import Foundation
 
 open class TKLogBaseDestination: Hashable, Equatable {
     
+    lazy public var hashValue: Int = self.defaultHashValue
+    
+    open var defaultHashValue: Int {
+        return 0
+    }
+    
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $N.$F:$l - $M $I"
     
     /// runs in own serial background thread for better performance
@@ -45,9 +51,10 @@ open class TKLogBaseDestination: Hashable, Equatable {
         queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
+    @discardableResult
     open func handlerLog(_ level: TKLogLevel,
                          _ message: String,
-                         _ innerMessage: String,
+                         _ innerMessage: String?,
                          _ thread: String,
                          _ file: String,
                          _ function: String,
@@ -60,7 +67,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
     
     func formatMessage(_ level: TKLogLevel,
                        _ message: String,
-                       _ innerMessage: String,
+                       _ innerMessage: String?,
                        _ thread: String,
                        _ file: String,
                        _ function: String,
@@ -88,7 +95,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
             case "t":
                 text += paddedString(thread , String(remainingPhrase))
             case "N":
-                text += paddedString(fileNameWithoutSuffix(file) , String(remainingPhrase))
+                text += paddedString(file , String(remainingPhrase))
             case "F":
                 text += paddedString(function , String(remainingPhrase))
             case "l":
@@ -96,7 +103,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
             case "M":
                 text += paddedString(message , String(remainingPhrase))
             case "I":
-                text += paddedString(innerMessage , String(remainingPhrase))
+                text += paddedString(innerMessage ?? "" , String(remainingPhrase))
             default:
                 text += phrase
             }
@@ -175,35 +182,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
         return TKLogger.loggerTag
     }
     
-    /// returns the filename without suffix (= file ending) of a path
-    func fileNameWithoutSuffix(_ file: String) -> String {
-        let fileName = fileNameOfFile(file)
-        
-        if !fileName.isEmpty {
-            let fileNameParts = fileName.components(separatedBy: ".")
-            if let firstPart = fileNameParts.first {
-                return firstPart
-            }
-        }
-        return ""
-    }
-    
-    /// returns the filename of a path
-    func fileNameOfFile(_ file: String) -> String {
-        let fileParts = file.components(separatedBy: "/")
-        if let lastPart = fileParts.last {
-            return lastPart
-        }
-        return ""
-    }
-    
     // MARK: Hashable 、Equatable
-    lazy public var hashValue: Int = self.defaultHashValue
-    
-    open var defaultHashValue: Int {
-        return 0
-    }
-    
     public func hash(into hasher: inout Hasher) {
         // do noting.
     }

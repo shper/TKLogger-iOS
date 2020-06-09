@@ -2,105 +2,159 @@
 //  TKLogger.swift
 //  FBSnapshotTestCase
 //
-//  Created by Shper on 2020/5/31.
+//  Created by Shper on 2020/5/31.8089
 //
 
 import Foundation
 
 public final class TKLogger {
     
-    public enum Level: Int {
-        case verbose = 0
-        case debug = 1
-        case info = 2
-        case warning = 3
-        case error = 4
-    }
+    public static var loggerTag = "TKLogger"
     
-    public private(set) static var destinations = Set<TKLoggerBaseDestination>()
+    /// do not log any message which has a lower level than this one
+    public static var minLevel = TKLogLevel.verbose
     
-    private(set) static var loggerTag = "TKLogger"
+    private(set) static var destinations = Set<TKLogBaseDestination>()
+    private(set) static var filters = Set<TKLogBaseFilter>()
     
-    public static func setup(tag: String = "TKLogger") {
+    public static func setup(tag: String = "TKLogger", level: TKLogLevel = TKLogLevel.verbose) {
         loggerTag = tag
+        minLevel = level
         
-        addDestination(TKLoggerConsoleDestination())
-        addDestination(TKLoggerFileDestination())
+        addDestination(TKLogConsoleDestination())
     }
     
-    // MARK: Handler
+    // MARK: Destination
     @discardableResult
-    public class func addDestination(_ handler: TKLoggerBaseDestination) -> Bool {
-        if destinations.contains(handler) {
+    public static func addDestination(_ destination: TKLogBaseDestination) -> Bool {
+        if destinations.contains(destination) {
             return false
         }
         
-        destinations.insert(handler)
+        destinations.insert(destination)
+        return true
+    }
+    
+    // MARK: Filter
+    @discardableResult
+    public static func addFilter(_ filter: TKLogBaseFilter) -> Bool {
+        if filters.contains(filter) {
+            return false
+        }
+        
+        filters.insert(filter)
         return true
     }
     
     // MARK: Levels
+    
     public static func verbose(_ message: String,
+                               _ internalMessage: String? = nil,
                                _ file: String = #file,
                                _ function: String = #function,
                                _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.verbose, message, file, function, line)
+        dispatchLog(TKLogLevel.verbose, message, internalMessage, file, function, line)
     }
     
     public static func debug(_ message: String,
+                             _ internalMessage: String? = nil,
                              _ file: String = #file,
                              _ function: String = #function,
                              _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.debug, message, file, function, line)
+        dispatchLog(TKLogLevel.debug, message, internalMessage, file, function, line)
     }
     
     public static func info(_ message: String,
+                            _ internalMessage: String? = nil,
                             _ file: String = #file,
                             _ function: String = #function,
                             _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.info, message, file, function, line)
+        dispatchLog(TKLogLevel.info, message, internalMessage, file, function, line)
     }
     
     public static func warning(_ message: String,
+                               _ internalMessage: String? = nil,
                                _ file: String = #file,
                                _ function: String = #function,
                                _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.warning, message, file, function, line)
+        dispatchLog(TKLogLevel.warning, message, internalMessage, file, function, line)
     }
     
     public static func error(_ message: String,
+                             _ internalMessage: String? = nil,
                              _ file: String = #file,
                              _ function: String = #function,
                              _ line: Int = #line) {
-        dispatchLog(TKLogger.Level.error, message, file, function, line)
+        dispatchLog(TKLogLevel.error, message, internalMessage, file, function, line)
     }
     
     // MARK: Inner function
     
-    private static func dispatchLog (_ level: TKLogger.Level,
+    private static func dispatchLog (_ level: TKLogLevel,
                                      _ message: String,
+                                     _ internalMessage: String? = nil,
                                      _ file: String,
                                      _ function: String,
                                      _ line: Int) {
         
-        let thread = threadName()
+        if (level.rawValue < minLevel.rawValue) {
+            return
+        }
         
-        for handler in destinations {
-            guard let queue = handler.queue else { continue }
+        var dispatchMessage: String? = message
+        var dispatchInternalMessage: String? = internalMessage
+        var dispatchFile: String = fileNameWithoutSuffix(file)
+        var dispatchFunction: String = function
+        
+        // Use filters to process logs
+        for filter in filters {
+            let filterResult = filter.handleFilter(level, dispatchMessage, dispatchInternalMessage, dispatchFile, dispatchFunction)
             
-            if handler.asynchronously {
+            if (filterResult.isIgnore) {
+                return
+            }
+            
+            dispatchMessage = filterResult.message
+            dispatchInternalMessage = filterResult.innerMessage
+            dispatchFile = filterResult.file
+            dispatchFunction = filterResult.function
+        }
+        
+        if (dispatchMessage?.isEmpty ?? true) && (dispatchInternalMessage?.isEmpty ?? true) {
+            return
+        }
+        
+        // dispatch the logs to destination
+        let threadName = getThreadName()
+        
+        for destination in destinations {
+            guard let queue = destination.queue else { continue }
+            
+            if destination.asynchronously {
                 queue.async {
-                    _ = handler.handlerLog(level, message, "", thread, file, function, line)
+                    _ = destination.handlerLog(level,
+                                               dispatchMessage ?? "",
+                                               dispatchInternalMessage,
+                                               threadName,
+                                               dispatchFile,
+                                               dispatchFunction,
+                                               line)
                 }
             } else {
                 queue.sync {
-                    _ = handler.handlerLog(level, message, "", thread, file, function, line)
+                    _ = destination.handlerLog(level,
+                                               dispatchMessage ?? "",
+                                               dispatchInternalMessage,
+                                               threadName,
+                                               dispatchFile,
+                                               dispatchFunction,
+                                               line)
                 }
             }
         }
     }
     
-    private static func threadName() -> String {
+    private static func getThreadName() -> String {
         if Thread.isMainThread {
             return ""
         }
@@ -111,6 +165,28 @@ public final class TKLogger {
         } else {
             return String(format: "%p", Thread.current)
         }
+    }
+    
+    /// returns the filename without suffix (= file ending) of a path
+    private static func fileNameWithoutSuffix(_ file: String) -> String {
+        let fileName = fileNameOfFile(file)
+        
+        if !fileName.isEmpty {
+            let fileNameParts = fileName.components(separatedBy: ".")
+            if let firstPart = fileNameParts.first {
+                return firstPart
+            }
+        }
+        return ""
+    }
+    
+    /// returns the filename of a path
+    private static func fileNameOfFile(_ file: String) -> String {
+        let fileParts = file.components(separatedBy: "/")
+        if let lastPart = fileParts.last {
+            return lastPart
+        }
+        return ""
     }
     
 }

@@ -23,6 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppDelegate.shared = self
         
         TKLogger.setup()
+//        TKLogger.addDestination(TKLogDiskDestination())
+        TKLogger.addFilter(ExampleLogFilter())
         
         setupBootViewController()
         

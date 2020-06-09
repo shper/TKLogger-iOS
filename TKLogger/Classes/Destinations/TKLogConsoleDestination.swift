@@ -21,7 +21,7 @@ public class TKLogConsoleDestination: TKLogBaseDestination {
     
     override public func handlerLog(_ level: TKLogLevel,
                                     _ message: String,
-                                    _ innerMessage: String,
+                                    _ innerMessage: String?,
                                     _ thread: String,
                                     _ file: String,
                                     _ function: String,
