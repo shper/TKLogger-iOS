@@ -47,7 +47,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
     
     @discardableResult
     open func handlerLog(_ level: TKLogLevel,
-                         _ message: String,
+                         _ message: String?,
                          _ innerMessage: String?,
                          _ thread: String,
                          _ file: String,
@@ -60,7 +60,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
     // MARK: Format
     
     func formatMessage(_ level: TKLogLevel,
-                       _ message: String,
+                       _ message: String?,
                        _ innerMessage: String?,
                        _ thread: String,
                        _ file: String,
@@ -95,7 +95,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
             case "l":
                 text += paddedString(String(line) , String(remainingPhrase))
             case "M":
-                text += paddedString(message , String(remainingPhrase))
+                text += paddedString(message ?? "" , String(remainingPhrase))
             case "I":
                 text += paddedString(innerMessage ?? "" , String(remainingPhrase))
             default:

@@ -37,7 +37,7 @@ public class TKLogDiskDestination: TKLogBaseDestination {
     // MARK: Handle to logs
     
     override public func handlerLog(_ level: TKLogLevel,
-                                    _ message: String,
+                                    _ message: String?,
                                     _ innerMessage: String?,
                                     _ thread: String,
                                     _ file: String,

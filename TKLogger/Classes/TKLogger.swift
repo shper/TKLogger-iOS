@@ -48,7 +48,7 @@ public final class TKLogger {
     
     // MARK: Levels
     
-    public static func verbose(_ message: String,
+    public static func verbose(_ message: String? = nil,
                                _ internalMessage: String? = nil,
                                _ file: String = #file,
                                _ function: String = #function,
@@ -56,7 +56,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.verbose, message, internalMessage, file, function, line)
     }
     
-    public static func debug(_ message: String,
+    public static func debug(_ message: String?  = nil,
                              _ internalMessage: String? = nil,
                              _ file: String = #file,
                              _ function: String = #function,
@@ -64,7 +64,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.debug, message, internalMessage, file, function, line)
     }
     
-    public static func info(_ message: String,
+    public static func info(_ message: String? = nil,
                             _ internalMessage: String? = nil,
                             _ file: String = #file,
                             _ function: String = #function,
@@ -72,7 +72,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.info, message, internalMessage, file, function, line)
     }
     
-    public static func warning(_ message: String,
+    public static func warning(_ message: String?  = nil,
                                _ internalMessage: String? = nil,
                                _ file: String = #file,
                                _ function: String = #function,
@@ -80,7 +80,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.warning, message, internalMessage, file, function, line)
     }
     
-    public static func error(_ message: String,
+    public static func error(_ message: String? = nil,
                              _ internalMessage: String? = nil,
                              _ file: String = #file,
                              _ function: String = #function,
@@ -91,7 +91,7 @@ public final class TKLogger {
     // MARK: Inner function
     
     private static func dispatchLog (_ level: TKLogLevel,
-                                     _ message: String,
+                                     _ message: String? = nil,
                                      _ internalMessage: String? = nil,
                                      _ file: String,
                                      _ function: String,
@@ -120,10 +120,6 @@ public final class TKLogger {
             dispatchFunction = filterResult.function
         }
         
-        if (dispatchMessage?.isEmpty ?? true) && (dispatchInternalMessage?.isEmpty ?? true) {
-            return
-        }
-        
         // dispatch the logs to destination
         let threadName = getThreadName()
         
@@ -133,7 +129,7 @@ public final class TKLogger {
             if destination.asynchronously {
                 queue.async {
                     _ = destination.handlerLog(level,
-                                               dispatchMessage ?? "",
+                                               dispatchMessage,
                                                dispatchInternalMessage,
                                                threadName,
                                                dispatchFile,
@@ -143,7 +139,7 @@ public final class TKLogger {
             } else {
                 queue.sync {
                     _ = destination.handlerLog(level,
-                                               dispatchMessage ?? "",
+                                               dispatchMessage,
                                                dispatchInternalMessage,
                                                threadName,
                                                dispatchFile,
