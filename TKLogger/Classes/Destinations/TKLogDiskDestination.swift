@@ -6,7 +6,7 @@
 //
 import Foundation
 
-public class TKLoggerFileDestination: TKLoggerBaseDestination {
+public class TKLogDiskDestination: TKLogBaseDestination {
     
     private static let DATE_FORMAT = "yyyy-MM-dd_HH-mm-ss"
     
@@ -14,6 +14,9 @@ public class TKLoggerFileDestination: TKLoggerBaseDestination {
     private var fileHandle: FileHandle?
     
     private var logFileURL: URL?
+    
+    
+    // MARK: Lifecycle
     
     override public init() {
         super.init()
@@ -32,7 +35,9 @@ public class TKLoggerFileDestination: TKLoggerBaseDestination {
         }
     }
     
-    override public func handlerLog(_ level: TKLogger.Level,
+    // MARK: XXX
+    
+    override public func handlerLog(_ level: TKLogLevel,
                                     _ message: String,
                                     _ innerMessage: String,
                                     _ thread: String,
@@ -68,7 +73,7 @@ public class TKLoggerFileDestination: TKLoggerBaseDestination {
             print(error)
         }
         
-        let faileName = "TKLogger/TKLogger_\(formatDate(TKLoggerFileDestination.DATE_FORMAT)).log"
+        let faileName = "TKLogger/TKLogger_\(formatDate(TKLogDiskDestination.DATE_FORMAT)).log"
         logFileURL = baseURL.appendingPathComponent(faileName, isDirectory: false)
     }
     

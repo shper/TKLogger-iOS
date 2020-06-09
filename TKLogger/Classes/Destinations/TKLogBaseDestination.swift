@@ -6,15 +6,12 @@
 //
 import Foundation
 
-open class TKLoggerBaseDestination: Hashable, Equatable {
+open class TKLogBaseDestination: Hashable, Equatable {
     
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $N.$F:$l - $M $I"
     
     /// runs in own serial background thread for better performance
     open var asynchronously = true
-    
-    /// do not log any message which has a lower level than this one
-    open var minLevel = TKLogger.Level.verbose
     
     /// set custom log level words for each level
     open var levelString = LevelString()
@@ -48,7 +45,7 @@ open class TKLoggerBaseDestination: Hashable, Equatable {
         queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
-    open func handlerLog(_ level: TKLogger.Level,
+    open func handlerLog(_ level: TKLogLevel,
                          _ message: String,
                          _ innerMessage: String,
                          _ thread: String,
@@ -61,7 +58,7 @@ open class TKLoggerBaseDestination: Hashable, Equatable {
     
     // MARK: Format
     
-    func formatMessage(_ level: TKLogger.Level,
+    func formatMessage(_ level: TKLogLevel,
                        _ message: String,
                        _ innerMessage: String,
                        _ thread: String,
@@ -131,7 +128,7 @@ open class TKLoggerBaseDestination: Hashable, Equatable {
     }
     
     /// returns color string for level
-    func colorForLevel(_ level: TKLogger.Level) -> String {
+    func colorForLevel(_ level: TKLogLevel) -> String {
         var color = ""
         
         switch level {
@@ -154,7 +151,7 @@ open class TKLoggerBaseDestination: Hashable, Equatable {
     }
     
     /// returns the string of a level
-    func levelWord(_ level: TKLogger.Level) -> String {
+    func levelWord(_ level: TKLogLevel) -> String {
         var str = ""
         
         switch level {
@@ -211,7 +208,7 @@ open class TKLoggerBaseDestination: Hashable, Equatable {
         // do noting.
     }
     
-    public static func == (lhs: TKLoggerBaseDestination, rhs: TKLoggerBaseDestination) -> Bool {
+    public static func == (lhs: TKLogBaseDestination, rhs: TKLogBaseDestination) -> Bool {
         return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
     }
     

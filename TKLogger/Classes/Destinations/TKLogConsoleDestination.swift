@@ -6,7 +6,7 @@
 //
 import Foundation
 
-public class TKLoggerConsoleDestination: TKLoggerBaseDestination {
+public class TKLogConsoleDestination: TKLogBaseDestination {
     
     public var useNSLog = false
     
@@ -19,7 +19,7 @@ public class TKLoggerConsoleDestination: TKLoggerBaseDestination {
         levelColor.error = "💔"       // red
     }
     
-    override public func handlerLog(_ level: TKLogger.Level,
+    override public func handlerLog(_ level: TKLogLevel,
                                     _ message: String,
                                     _ innerMessage: String,
                                     _ thread: String,
