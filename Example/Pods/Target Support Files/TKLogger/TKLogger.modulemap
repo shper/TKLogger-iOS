@@ -1,6 +1,0 @@
-framework module TKLogger {
-  umbrella header "TKLogger-umbrella.h"
-
-  export *
-  module * { export * }
-}
