@@ -25,7 +25,7 @@ public class TKLogDiskDestination: TKLogBaseDestination {
         levelColor.warning = "💛"     // yellow
         levelColor.error = "💔"       // red
         
-        cerateLogDirectory()
+        createLogDirectory()
     }
     
     deinit {
@@ -56,14 +56,14 @@ public class TKLogDiskDestination: TKLogBaseDestination {
         return nil
     }
     
-    func cerateLogDirectory() {
+    func createLogDirectory() {
         guard let baseURL = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first else {
             return
         }
         
         do {
-             let sss = baseURL.appendingPathComponent("TKLogger", isDirectory: true)
-            try fileManager.createDirectory(atPath: sss.path, withIntermediateDirectories: true, attributes: nil)
+             let logDir = baseURL.appendingPathComponent("TKLogger", isDirectory: true)
+            try fileManager.createDirectory(atPath: logDir.path, withIntermediateDirectories: true, attributes: nil)
         } catch {
             print(error)
         }
