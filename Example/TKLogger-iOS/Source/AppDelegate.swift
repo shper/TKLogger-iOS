@@ -19,16 +19,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         AppDelegate.shared = self
-        
-        TKLogger.setup()
-//        TKLogger.addDestination(TKLogDiskDestination())
-        TKLogger.addFilter(ExampleLogFilter())
-        
+
+        setupTKLogger()
         setupBootViewController()
         
         return true
+    }
+    
+    private func setupTKLogger() {
+        TKLogger.setup()
+        
+        TKLogger.addFilter(ExampleLogFilter())
+        
+        TKLogger.addDestination(TKLogConsoleDestination())
+        TKLogger.addDestination(TKLogDiskDestination())
     }
     
     private func setupBootViewController() {

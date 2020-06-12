@@ -19,11 +19,6 @@ public class TKLogDiskDestination: TKLogBaseDestination {
     
     override public init() {
         super.init()
-        levelColor.verbose = "💜"     // silver
-        levelColor.info = "💙"         // blue
-        levelColor.debug = "💚"        // green
-        levelColor.warning = "💛"     // yellow
-        levelColor.error = "💔"       // red
         
         createLogDirectory()
     }
@@ -105,5 +100,5 @@ public class TKLogDiskDestination: TKLogBaseDestination {
             print(error)
         }
     }
-    
+
 }

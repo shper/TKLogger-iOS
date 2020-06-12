@@ -20,8 +20,6 @@ public final class TKLogger {
     public static func setup(tag: String = "TKLogger", level: TKLogLevel = TKLogLevel.verbose) {
         loggerTag = tag
         minLevel = level
-        
-        addDestination(TKLogConsoleDestination())
     }
     
     // MARK: Destination

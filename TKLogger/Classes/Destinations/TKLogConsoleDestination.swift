@@ -10,15 +10,6 @@ public class TKLogConsoleDestination: TKLogBaseDestination {
     
     public var useNSLog = false
     
-    override public init() {
-        super.init()
-        levelColor.verbose = "💜"     // silver
-        levelColor.info = "💙"         // blue
-        levelColor.debug = "💚"        // green
-        levelColor.warning = "💛"     // yellow
-        levelColor.error = "💔"       // red
-    }
-    
     override public func handlerLog(_ level: TKLogLevel,
                                     _ message: String?,
                                     _ innerMessage: String?,

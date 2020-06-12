@@ -7,8 +7,8 @@
 import Foundation
 
 open class TKLogBaseDestination: Hashable, Equatable {
-
-    open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $N.$F:$l - $M $I"
+    
+    open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $F.$f:$l - $M $I"
     
     /// runs in own serial background thread for better performance
     open var asynchronously = true
@@ -28,13 +28,12 @@ open class TKLogBaseDestination: Hashable, Equatable {
     }
     
     // For a colored log level word in a logged line
-    // empty on default
     public struct LevelColor {
-        public var verbose = ""     // silver
-        public var debug = ""       // green
-        public var info = ""        // blue
-        public var warning = ""     // yellow
-        public var error = ""       // red
+        public var verbose = "💜"     // silver
+        public var debug = "💚"       // green
+        public var info = "💙"        // blue
+        public var warning = "💛"     // yellow
+        public var error = "💔"       // red
     }
     
     var queue: DispatchQueue?
@@ -88,9 +87,9 @@ open class TKLogBaseDestination: Hashable, Equatable {
                 text += paddedString(loggerTag() , String(remainingPhrase))
             case "t":
                 text += paddedString(thread , String(remainingPhrase))
-            case "N":
-                text += paddedString(file , String(remainingPhrase))
             case "F":
+                text += paddedString(file , String(remainingPhrase))
+            case "f":
                 text += paddedString(function , String(remainingPhrase))
             case "l":
                 text += paddedString(String(line) , String(remainingPhrase))
