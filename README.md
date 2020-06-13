@@ -1,5 +1,7 @@
 # TKLogger-iOS
 
+![](media/guide.png)
+
 [![CI Status](https://img.shields.io/travis/me@shper.cn/TKLogger-iOS.svg?style=flat)](https://travis-ci.org/me@shper.cn/TKLogger-iOS)
 [![Version](https://img.shields.io/cocoapods/v/TKLogger-iOS.svg?style=flat)](https://cocoapods.org/pods/TKLogger-iOS)
 [![License](https://img.shields.io/cocoapods/l/TKLogger-iOS.svg?style=flat)](https://cocoapods.org/pods/TKLogger-iOS)
@@ -17,12 +19,12 @@ TKLogger-iOS is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'TKLogger-iOS'
+pod 'TKLogger'
 ```
 
 ## Author
 
-me@shper.cn, me@shper.cn
+me@shper.cn
 
 ## License
 
