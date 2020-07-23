@@ -10,31 +10,13 @@ public class TKLogConsoleDestination: TKLogBaseDestination {
     
     public var useNSLog = false
     
-    override public func handlerLog(_ level: TKLogLevel,
-                                    _ message: String?,
-                                    _ innerMessage: String?,
-                                    _ thread: String,
-                                    _ file: String,
-                                    _ function: String,
-                                    _ line: Int) -> String? {
-        
-        let logString = super.handlerLog(level,
-                                         message,
-                                         innerMessage,
-                                         thread,
-                                         file,
-                                         function,
-                                         line)
-        
-        if let str = logString {
-            if useNSLog {
-                NSLog("%@", str)
-            } else {
-                print(str)
-            }
+    override public func handlerLog(_ tkLog: TKLogModel) {
+        let logString = formatLog(tkLog)
+        if useNSLog {
+            NSLog("%@", logString)
+        } else {
+            print(logString)
         }
-        
-        return nil
     }
     
 }

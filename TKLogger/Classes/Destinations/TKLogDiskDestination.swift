@@ -31,24 +31,12 @@ public class TKLogDiskDestination: TKLogBaseDestination {
     
     // MARK: Handle to logs
     
-    override public func handlerLog(_ level: TKLogLevel,
-                                    _ message: String?,
-                                    _ innerMessage: String?,
-                                    _ thread: String,
-                                    _ file: String,
-                                    _ function: String,
-                                    _ line: Int) -> String? {
+    override public func handlerLog(_ tkLog: TKLogModel) {
+        let logStr = formatLog(tkLog)
         
-        guard let logStr = super.handlerLog(level,
-                                            message,
-                                            innerMessage,
-                                            thread,
-                                            file,
-                                            function,
-                                            line) else { return nil }
-        
-        saveToFile(logStr)
-        return nil
+        if !logStr.isEmpty {
+            saveToFile(logStr)
+        }
     }
     
     func createLogDirectory() {

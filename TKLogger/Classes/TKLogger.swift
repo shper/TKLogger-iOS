@@ -99,50 +99,36 @@ public final class TKLogger {
             return
         }
         
-        var dispatchMessage: String? = message
-        var dispatchInternalMessage: String? = internalMessage
-        var dispatchFile: String = fileNameWithoutSuffix(file)
-        var dispatchFunction: String = function
+        var tkLog: TKLogModel = TKLogModel()
+        tkLog.level = level
+        tkLog.message = message
+        tkLog.threadName = getThreadName()
+        tkLog.internalMessage = internalMessage
+        tkLog.fileName = fileNameWithoutSuffix(file)
+        tkLog.functionName = function
+        tkLog.lineNum = line
+        
         
         // Use filters to process logs
         for filter in filters {
-            let filterResult = filter.handleFilter(level, dispatchMessage, dispatchInternalMessage, dispatchFile, dispatchFunction)
+            tkLog = filter.handleFilter(tkLog)
             
-            if (filterResult.isIgnore) {
+            if (tkLog.isIgnore) {
                 return
             }
-            
-            dispatchMessage = filterResult.message
-            dispatchInternalMessage = filterResult.innerMessage
-            dispatchFile = filterResult.file
-            dispatchFunction = filterResult.function
         }
         
         // dispatch the logs to destination
-        let threadName = getThreadName()
-        
         for destination in destinations {
             guard let queue = destination.queue else { continue }
             
             if destination.asynchronously {
                 queue.async {
-                    _ = destination.handlerLog(level,
-                                               dispatchMessage,
-                                               dispatchInternalMessage,
-                                               threadName,
-                                               dispatchFile,
-                                               dispatchFunction,
-                                               line)
+                    _ = destination.handlerLog(tkLog)
                 }
             } else {
                 queue.sync {
-                    _ = destination.handlerLog(level,
-                                               dispatchMessage,
-                                               dispatchInternalMessage,
-                                               threadName,
-                                               dispatchFile,
-                                               dispatchFunction,
-                                               line)
+                    _ = destination.handlerLog(tkLog)
                 }
             }
         }

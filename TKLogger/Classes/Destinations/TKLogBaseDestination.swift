@@ -44,27 +44,12 @@ open class TKLogBaseDestination: Hashable, Equatable {
         queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
-    @discardableResult
-    open func handlerLog(_ level: TKLogLevel,
-                         _ message: String?,
-                         _ innerMessage: String?,
-                         _ thread: String,
-                         _ file: String,
-                         _ function: String,
-                         _ line: Int) -> String? {
-        
-        return formatMessage(level, message, innerMessage, thread, file, function, line)
+    open func handlerLog(_ tkLog: TKLogModel) {
     }
     
     // MARK: Format
     
-    func formatMessage(_ level: TKLogLevel,
-                       _ message: String?,
-                       _ innerMessage: String?,
-                       _ thread: String,
-                       _ file: String,
-                       _ function: String,
-                       _ line: Int) -> String {
+    func formatLog(_ tkLog: TKLogModel) -> String {
         
         var text = ""
         let phrases = ("$i" + format).split(separator: "$")
@@ -80,23 +65,23 @@ open class TKLogBaseDestination: Hashable, Equatable {
             case "D":
                 text += formatDate(String(remainingPhrase))
             case "C":
-                text += paddedString(colorForLevel(level) , String(remainingPhrase))
+                text += paddedString(colorForLevel(tkLog.level) , String(remainingPhrase))
             case "L":
-                text += paddedString(levelWord(level) , String(remainingPhrase))
+                text += paddedString(levelWord(tkLog.level) , String(remainingPhrase))
             case "T":
                 text += paddedString(loggerTag() , String(remainingPhrase))
             case "t":
-                text += paddedString(thread , String(remainingPhrase))
+                text += paddedString(tkLog.threadName , String(remainingPhrase))
             case "F":
-                text += paddedString(file , String(remainingPhrase))
+                text += paddedString(tkLog.fileName , String(remainingPhrase))
             case "f":
-                text += paddedString(function , String(remainingPhrase))
+                text += paddedString(tkLog.functionName , String(remainingPhrase))
             case "l":
-                text += paddedString(String(line) , String(remainingPhrase))
+                text += paddedString(String(tkLog.lineNum ?? -1) , String(remainingPhrase))
             case "M":
-                text += paddedString(message ?? "" , String(remainingPhrase))
+                text += paddedString(tkLog.message, String(remainingPhrase))
             case "I":
-                text += paddedString(innerMessage ?? "" , String(remainingPhrase))
+                text += paddedString(tkLog.internalMessage, String(remainingPhrase))
             default:
                 text += phrase
             }
@@ -105,8 +90,8 @@ open class TKLogBaseDestination: Hashable, Equatable {
         return text
     }
     
-    func paddedString(_ str1: String, _ str2: String) -> String {
-        var str = str1 + str2
+    func paddedString(_ str1: String?, _ str2: String) -> String {
+        var str = (str1 ?? "") + str2
         if str == " " {
             str = ""
         }

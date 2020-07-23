@@ -12,14 +12,8 @@ open class TKLogBaseFilter: Hashable, Equatable {
     public init() {
     }
 
-    open func handleFilter(_ level: TKLogLevel,
-                           _ message: String?,
-                           _ internalMessage: String?,
-                           _ file: String,
-                           _ function: String)
-        -> (isIgnore: Bool, message: String?, innerMessage: String?, file: String, function: String)
-    {
-        return (false, message, internalMessage, file, function)
+    open func handleFilter(_ tkLog: TKLogModel) -> TKLogModel {
+        return tkLog
     }
 
     // MARK: Hashable 、Equatable

@@ -160,9 +160,9 @@
 		DD29EA01248F76FE002CA6E1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DDB6BDF924CA84A100C27733 /* Filter */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* RootViewController.swift */,
-				DD29EA04248F7D36002CA6E1 /* ExampleLogFilter.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -173,6 +173,14 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		DDB6BDF924CA84A100C27733 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				DD29EA04248F7D36002CA6E1 /* ExampleLogFilter.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
