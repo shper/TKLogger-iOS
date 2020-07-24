@@ -14,12 +14,17 @@ public final class TKLogger {
     /// do not log any message which has a lower level than this one
     public static var minLevel = TKLogLevel.verbose
     
+    static var queue: DispatchQueue?
+    
     private(set) static var destinations = Set<TKLogBaseDestination>()
-    private(set) static var filters = Set<TKLogBaseFilter>()
+    private(set) static var filters = Array<TKLogBaseFilter>()
     
     public static func setup(tag: String = "TKLogger", level: TKLogLevel = TKLogLevel.verbose) {
         loggerTag = tag
         minLevel = level
+
+        let queueLabel = "TKLog-queue-" + NSUUID().uuidString
+        queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
     // MARK: Destination
@@ -40,7 +45,17 @@ public final class TKLogger {
             return false
         }
         
-        filters.insert(filter)
+        filters.append(filter)
+        return true
+    }
+    
+    @discardableResult
+    public static func addFilter(_ filter: TKLogBaseFilter, priority: Int) -> Bool {
+        if filters.contains(filter) {
+            return false
+        }
+        
+        filters.insert(filter, at: priority)
         return true
     }
     
@@ -108,28 +123,19 @@ public final class TKLogger {
         tkLog.functionName = function
         tkLog.lineNum = line
         
-        
-        // Use filters to process logs
-        for filter in filters {
-            tkLog = filter.handleFilter(tkLog)
+        queue?.async {
+            // Use filters to process logs
+            for filter in filters {
+                tkLog = filter.handleFilter(tkLog)
             
-            if (tkLog.isIgnore) {
-                return
+                if (tkLog.isIgnore) {
+                    return
+                }
             }
-        }
         
-        // dispatch the logs to destination
-        for destination in destinations {
-            guard let queue = destination.queue else { continue }
-            
-            if destination.asynchronously {
-                queue.async {
-                    _ = destination.handlerLog(tkLog)
-                }
-            } else {
-                queue.sync {
-                    _ = destination.handlerLog(tkLog)
-                }
+            // dispatch the logs to destination
+            for destination in destinations {
+                destination.handlerLog(tkLog)
             }
         }
     }

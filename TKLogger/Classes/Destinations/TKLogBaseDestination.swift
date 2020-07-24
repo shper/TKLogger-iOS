@@ -10,9 +10,6 @@ open class TKLogBaseDestination: Hashable, Equatable {
     
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $F.$f:$l - $M $I"
     
-    /// runs in own serial background thread for better performance
-    open var asynchronously = true
-    
     /// set custom log level words for each level
     open var levelString = LevelString()
     
@@ -36,12 +33,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
         public var error = "💔"       // red
     }
     
-    var queue: DispatchQueue?
-    
     public init() {
-        let uuid = NSUUID().uuidString
-        let queueLabel = "TKLog-queue-" + uuid
-        queue = DispatchQueue(label: queueLabel, target: queue)
     }
     
     open func handlerLog(_ tkLog: TKLogModel) {
