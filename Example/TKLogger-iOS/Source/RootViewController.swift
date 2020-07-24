@@ -28,12 +28,22 @@ class RootViewController: UIViewController {
             make.height.equalTo(70)
         }
         
+        self.view.addSubview(self.verboseFilterBtn)
+        self.verboseFilterBtn.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().offset(-100)
+            make.height.equalTo(50)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(self.titleTextView.snp.bottom).offset(30)
+        }
+        self.verboseFilterBtn.addTarget(self, action: #selector(self.verboseFilterBtnClickFun), for: .touchDown)
+
+        
         self.view.addSubview(self.verboseLogBtn)
         self.verboseLogBtn.snp.makeConstraints { (make) in
             make.width.equalToSuperview().offset(-100)
             make.height.equalTo(50)
             make.centerX.equalToSuperview()
-            make.top.equalTo(self.titleTextView.snp.bottom).offset(30)
+            make.top.equalTo(self.verboseFilterBtn.snp.bottom).offset(30)
         }
         self.verboseLogBtn.addTarget(self, action: #selector(self.verboseLogBtnClickFun), for: .touchDown)
         
@@ -86,6 +96,15 @@ class RootViewController: UIViewController {
         return textView
     }()
     
+    fileprivate lazy var verboseFilterBtn: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add Verbose Filter", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
+        button.layer.cornerRadius = 10.0
+        
+        return button
+    }()
+    
     fileprivate lazy var verboseLogBtn: UIButton = {
         let button = UIButton()
         button.setTitle("Verbose level Log", for: .normal)
@@ -133,6 +152,10 @@ class RootViewController: UIViewController {
     
     // MARK: - Target
 
+    @objc func verboseFilterBtnClickFun() {
+        TKLogger.addFilter(VerboseLogFilter())
+    }
+    
     @objc func verboseLogBtnClickFun() {
         TKLogger.verbose("This is the verbose level log.")
     }

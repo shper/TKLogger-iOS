@@ -9,7 +9,7 @@
 import Foundation
 import TKLogger
 
-class ExampleLogFilter: TKLogBaseFilter {
+class VerboseLogFilter: TKLogBaseFilter {
     
     override func handleFilter(_ tkLog: TKLogModel) -> TKLogModel {
         if tkLog.level.rawValue <= TKLogLevel.verbose.rawValue {

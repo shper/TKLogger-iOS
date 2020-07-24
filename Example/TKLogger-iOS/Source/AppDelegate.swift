@@ -30,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupTKLogger() {
         TKLogger.setup()
         
-        TKLogger.addFilter(ExampleLogFilter())
-        
         TKLogger.addDestination(TKLogConsoleDestination())
         TKLogger.addDestination(TKLogDiskDestination())
     }

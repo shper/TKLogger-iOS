@@ -13,7 +13,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		69B1045EEDB7D86990BC4805 /* Pods_TKLogger_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8504A2E6C37B618C315EC0B /* Pods_TKLogger_iOS_Tests.framework */; };
 		A975634A91DD07C470D476E0 /* Pods_TKLogger_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C98CCF2994610BD9063391A /* Pods_TKLogger_iOS_Example.framework */; };
-		DD29EA05248F7D36002CA6E1 /* ExampleLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD29EA04248F7D36002CA6E1 /* ExampleLogFilter.swift */; };
+		DD29EA05248F7D36002CA6E1 /* VerboseLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD29EA04248F7D36002CA6E1 /* VerboseLogFilter.swift */; };
 		DDB596AE2483896600D42D76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDB596B02483896600D42D76 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -42,7 +42,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		B8504A2E6C37B618C315EC0B /* Pods_TKLogger_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TKLogger_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C43A7ADFA80BB80EC27C56ED /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		DD29EA04248F7D36002CA6E1 /* ExampleLogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleLogFilter.swift; sourceTree = "<group>"; };
+		DD29EA04248F7D36002CA6E1 /* VerboseLogFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerboseLogFilter.swift; sourceTree = "<group>"; };
 		DDB596AF2483896600D42D76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE39FAA00B783DE6BE7376F2 /* Pods-TKLogger-iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TKLogger-iOS_Example.release.xcconfig"; path = "Target Support Files/Pods-TKLogger-iOS_Example/Pods-TKLogger-iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E12D2B310D151D4306CB9F18 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 		DDB6BDF924CA84A100C27733 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
-				DD29EA04248F7D36002CA6E1 /* ExampleLogFilter.swift */,
+				DD29EA04248F7D36002CA6E1 /* VerboseLogFilter.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -378,7 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* RootViewController.swift in Sources */,
-				DD29EA05248F7D36002CA6E1 /* ExampleLogFilter.swift in Sources */,
+				DD29EA05248F7D36002CA6E1 /* VerboseLogFilter.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
