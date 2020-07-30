@@ -20,4 +20,7 @@ public class TKLogModel {
     public var threadName: String? = nil
     public var lineNum: Int? = nil
     
+    public init() {
+    }
+    
 }
