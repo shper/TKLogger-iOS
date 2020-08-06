@@ -54,25 +54,27 @@ open class TKLogBaseDestination: Hashable, Equatable {
             switch phrasePrefix {
             case "i": // ignore
                 text += remainingPhrase
-            case "D":
+            case "D": // Date
                 text += formatDate(String(remainingPhrase))
-            case "C":
+            case "C": // LevelColor
                 text += paddedString(colorForLevel(tkLog.level) , String(remainingPhrase))
-            case "L":
+            case "L": // Level
                 text += paddedString(levelWord(tkLog.level) , String(remainingPhrase))
-            case "T":
+            case "T": // Tag
                 text += paddedString(loggerTag() , String(remainingPhrase))
-            case "t":
+            case "t": // threadName
                 text += paddedString(tkLog.threadName , String(remainingPhrase))
-            case "F":
+            case "c": // clazzName
+                text += paddedString(tkLog.clazzName, String(remainingPhrase))
+            case "F": // fileName
                 text += paddedString(tkLog.fileName , String(remainingPhrase))
-            case "f":
+            case "f": // functionName
                 text += paddedString(tkLog.functionName , String(remainingPhrase))
-            case "l":
+            case "l": // line
                 text += paddedString(String(tkLog.lineNum ?? -1) , String(remainingPhrase))
-            case "M":
+            case "M": // Message
                 text += paddedString(tkLog.message, String(remainingPhrase))
-            case "I":
+            case "I": // internal
                 text += paddedString(tkLog.internalMessage, String(remainingPhrase))
             default:
                 text += phrase
