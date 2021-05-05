@@ -7,6 +7,7 @@
 
 import Foundation
 
+@objc
 public enum TKLogLevel: Int {
     case verbose = 0
     case debug = 1

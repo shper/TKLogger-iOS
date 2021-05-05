@@ -6,7 +6,8 @@
 //
 import Foundation
 
-open class TKLogBaseDestination: Hashable, Equatable {
+@objc
+open class TKLogBaseDestination: NSObject {
     
     open var format = "$Dyyyy-MM-dd HH:mm:ss $C $L/$T $t $F.$f:$l - $M $I"
     
@@ -33,7 +34,7 @@ open class TKLogBaseDestination: Hashable, Equatable {
         public var error = "💔"       // red
     }
     
-    public init() {
+    public override init() {
     }
     
     open func handlerLog(_ tkLog: TKLogModel) {
@@ -154,13 +155,13 @@ open class TKLogBaseDestination: Hashable, Equatable {
         return TKLogger.loggerTag
     }
     
-    // MARK: Hashable 、Equatable
-    public func hash(into hasher: inout Hasher) {
-        // do noting.
-    }
-    
-    public static func == (lhs: TKLogBaseDestination, rhs: TKLogBaseDestination) -> Bool {
-        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
-    }
+//    // MARK: Hashable 、Equatable
+//    public func hash(into hasher: inout Hasher) {
+//        // do noting.
+//    }
+//
+//    public static func == (lhs: TKLogBaseDestination, rhs: TKLogBaseDestination) -> Bool {
+//        return ObjectIdentifier(lhs) == ObjectIdentifier(rhs)
+//    }
     
 }

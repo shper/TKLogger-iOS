@@ -12,7 +12,6 @@ import TKLogger
 class RootViewController: UIViewController {
     
     override func viewDidLoad() {
-        TKLogger.debug("viewDidLoad")
         super.viewDidLoad()
         
         setupLayout()

@@ -30,8 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupTKLogger() {
         TKLogger.setup()
         
-        TKLogger.addDestination(TKLogConsoleDestination())
-        TKLogger.addDestination(TKLogDiskDestination())
+        TKLogger.addDestination(Custom1Destination())
+        TKLogger.addDestination(Custom2Destination())
+        
+//        TKLogger.addDestination(TKLogConsoleDestination())
+//        TKLogger.addDestination(TKLogDiskDestination())
     }
     
     private func setupBootViewController() {

@@ -7,7 +7,8 @@
 
 import Foundation
 
-public final class TKLogger {
+@objc
+public final class TKLogger: NSObject {
     
     public static var loggerTag = "TKLogger"
     
@@ -19,15 +20,17 @@ public final class TKLogger {
     private(set) static var destinations = Set<TKLogBaseDestination>()
     private(set) static var filters = Array<TKLogBaseFilter>()
     
+    @objc
     public static func setup(tag: String = "TKLogger", level: TKLogLevel = TKLogLevel.verbose) {
         loggerTag = tag
         minLevel = level
 
         let queueLabel = "TKLog-queue-" + NSUUID().uuidString
-        queue = DispatchQueue(label: queueLabel, target: queue)
+        queue = DispatchQueue(label: queueLabel, attributes: .concurrent)
     }
     
     // MARK: Destination
+    @objc
     @discardableResult
     public static func addDestination(_ destination: TKLogBaseDestination) -> Bool {
         if destinations.contains(destination) {
@@ -39,6 +42,7 @@ public final class TKLogger {
     }
     
     // MARK: Filter
+    @objc
     @discardableResult
     public static func addFilter(_ filter: TKLogBaseFilter) -> Bool {
         if filters.contains(filter) {
@@ -49,6 +53,7 @@ public final class TKLogger {
         return true
     }
     
+    @objc
     @discardableResult
     public static func addFilter(_ filter: TKLogBaseFilter, priority: Int) -> Bool {
         if filters.contains(filter) {
@@ -60,7 +65,7 @@ public final class TKLogger {
     }
     
     // MARK: Levels
-    
+    @objc
     public static func verbose(_ message: String? = nil,
                                _ internalMessage: String? = nil,
                                _ file: String = #file,
@@ -69,6 +74,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.verbose, message, internalMessage, file, function, line)
     }
     
+    @objc
     public static func debug(_ message: String?  = nil,
                              _ internalMessage: String? = nil,
                              _ file: String = #file,
@@ -77,6 +83,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.debug, message, internalMessage, file, function, line)
     }
     
+    @objc
     public static func info(_ message: String? = nil,
                             _ internalMessage: String? = nil,
                             _ file: String = #file,
@@ -85,6 +92,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.info, message, internalMessage, file, function, line)
     }
     
+    @objc
     public static func warning(_ message: String?  = nil,
                                _ internalMessage: String? = nil,
                                _ file: String = #file,
@@ -93,6 +101,7 @@ public final class TKLogger {
         dispatchLog(TKLogLevel.warning, message, internalMessage, file, function, line)
     }
     
+    @objc
     public static func error(_ message: String? = nil,
                              _ internalMessage: String? = nil,
                              _ file: String = #file,
@@ -127,7 +136,6 @@ public final class TKLogger {
             // Use filters to process logs
             for filter in filters {
                 tkLog = filter.handleFilter(tkLog)
-            
                 if (tkLog.isIgnore) {
                     return
                 }
@@ -135,7 +143,9 @@ public final class TKLogger {
         
             // dispatch the logs to destination
             for destination in destinations {
-                destination.handlerLog(tkLog)
+                queue?.async {
+                    destination.handlerLog(tkLog)
+                }
             }
         }
     }
